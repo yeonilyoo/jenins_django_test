@@ -36,7 +36,8 @@ python3 manage.py collectstatic --noinput
 # 6) 기존 runserver 종료 (비정상적인 경우도 있으므로 pkill로 처리)
 pkill -f "manage.py runserver" || true
 # 7) runserver 백그라운드 실행, 로그는 /var/log/pybo_run.log
-nohup python3 manage.py runserver 0.0.0.0:8000 > /var/log/pybo_run.log 2>&1 &
+# nohup python3 manage.py runserver 0.0.0.0:8000 > /var/log/pybo_run.log 2>&1 &
+nohup python3 manage.py runserver 0.0.0.0:8000 > /home/vagrant/pybo_run.log 2>&1 &
 
 echo "DEPLOY_OK $(date)"
 
